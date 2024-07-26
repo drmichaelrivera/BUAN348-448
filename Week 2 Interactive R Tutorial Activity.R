@@ -405,27 +405,6 @@ print(ls("package:ggplot2"))  # Lists all attributes and methods of the ggplot2 
 # library(utils)
 # print(ls("package:utils"))
 
-## Writing and importing custom functions
-# Custom functions can be created and sourced using the source() function.
-
-# Example: Create a file named my_functions.R with the following content:
-# greet <- function(name) {
-#     print(paste("Hello,", name))
-# }
-# In the main script, import and use the custom function:
-# source("my_functions.R")
-# greet("Alice")
-
-# Task: Create a custom function and use it
-# Step 1: Create a file named my_functions.R with the following content:
-# add <- function(a, b) {
-#     return(a + b)
-# }
-# Step 2: In the main script, import and use the custom function:
-# source("my_functions.R")
-# result <- add(3, 4)
-# print(result)
-
 # Standard Libraries
 
 ## Using math for mathematical operations
