@@ -519,26 +519,6 @@ close(file)
 # }
 # close(file)
 
-## Writing to files and handling file exceptions
-# Writing to files can be done using the writeLines function, and exceptions can be handled using tryCatch.
-
-tryCatch({
-  file <- file("example.txt", "a")
-  writeLines("\nAppending new content", file)
-  close(file)
-}, error = function(e) {
-  print("An error occurred while writing to the file")
-})
-
-# Task: Write to a file and handle potential exceptions
-# tryCatch({
-#     file <- file("example.txt", "a")
-#     writeLines("\nAdding more content", file)
-#     close(file)
-# }, error = function(e) {
-#     print("An error occurred while writing to the file")
-# })
-
 # Handling Different File Formats
 
 ## Reading and writing CSV files using the read.csv and write.csv functions
