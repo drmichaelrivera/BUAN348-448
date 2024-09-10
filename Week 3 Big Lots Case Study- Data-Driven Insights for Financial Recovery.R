@@ -120,13 +120,26 @@ ggpairs(sales_data, columns = c("Age", "Quantity", "Total.Amount"),
 # =============================
 
 # Uncomment the code below and see if you can create a connected scatter plot using
-# Date and Total.Amount. Our dataframe is called sales_data - not data.
-# data$date <- as.Date(data$date)
-# data %>%
-#   tail(10) %>%
-#   ggplot( aes(x=date, y=value)) +
+# Month and Average_Total_Amount from the newly created dataframe. 
+# Our initial dataframe is called sales_data - not data. 
+
+# print(data)
+
+# Calculate the average Total.Amount by month
+# monthly_averages <- data %>%
+#   mutate(Month = format(date, "%Y-%m")) %>%  # Create a new Month column in "YYYY-MM" format
+#   group_by(Month) %>%  # Group by the Month column
+#   summarize(Average_Total_Amount = mean(total, na.rm = TRUE))  # Calculate the average
+
+# Check the summarized data
+# print(monthly_averages)
+
+# Plot the monthly averages
+# ggplot(monthly_averages, aes(x = var1, y = var2, group = 1)) +
 #   geom_line() +
-#   geom_point()
+#   geom_point() +
+#   theme(axis.text.x = element_text(angle = 45, hjust = 1)) +  # Rotate x-axis labels for readability
+#   labs(x = "Month", y = "Average Total Amount", title = "Average Total Amount by Month")
 
 # =============================
 # STEP 4: GENDER-BASED SPENDING ANALYSIS
@@ -142,7 +155,7 @@ print("Total Spending by Gender:")
 print(total_spending_by_gender)
 
 # =============================
-# CHALLENGE: CREATE A CONNECTED SCATTER PLOT
+# CHALLENGE: CREATE A BAR CHART
 # =============================
 
 # Uncomment the code below and see if you can create a barplot using
