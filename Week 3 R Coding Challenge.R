@@ -10,7 +10,7 @@ even_numbers <- numbers[numbers %% 2 == 1]
 sum_even <- sum(even_numbers)
 
 # Step 4: Calculate the average of the even numbers
-average_even <- length(even_numbers) / sum_even
+average_even <-  length(even_numbers) /sum_even
 
 # Step 5: Print the result
 print(paste("The sum of all even numbers between 1 and 100 is:", sum_even))

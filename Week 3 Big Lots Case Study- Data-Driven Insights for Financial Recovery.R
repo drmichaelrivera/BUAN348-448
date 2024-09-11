@@ -118,28 +118,32 @@ ggpairs(sales_data, columns = c("Age", "Quantity", "Total.Amount"),
 # =============================
 # CHALLENGE: CREATE A CONNECTED SCATTER PLOT
 # =============================
-
 # Uncomment the code below and see if you can create a connected scatter plot using
-# Month and Average_Total_Amount from the newly created dataframe. 
-# Our initial dataframe is called sales_data - not data. 
+# Date and Total Amount. Our initial dataframe is called sales_data - not data. 
 
-print(sales_data)
+# ggplot(data, aes(x = var1, y = var2, group = 1)) + geom_line() + geom_point()
+
+# Maybe just charting Date and Total Amount isn't very helpful?
+
+# Let's try consider simplifying by computing monthly averages!
+
+# print(sales_data)
 
 # Ensure the Date column is in the correct Date format
-sales_data <- sales_data %>%
-  mutate(Date = as.Date(Date, format = "%m/%d/%y"))  # Convert the Date column to Date type
+# sales_data <- sales_data %>%
+#   mutate(Date = as.Date(Date, format = "%m/%d/%y"))
 
 # Calculate the average Total.Amount by month
-monthly_averages <- sales_data %>%
-  mutate(Month = format(Date, "%Y-%m")) %>%  # Create a new Month column in "YYYY-MM" format
-  group_by(Month) %>%  # Group by the Month column
-  summarize(Average_Total_Amount = mean(Total.Amount, na.rm = TRUE))  # Calculate the average
+# monthly_averages <- sales_data %>%
+#   mutate(Month = format(Date, "%Y-%m")) %>%  # Create a new Month column in "YYYY-MM" format
+#   group_by(Month) %>%  # Group by the Month column
+#   summarize(Average_Total_Amount = mean(Total.Amount, na.rm = TRUE))  # Calculate the average
 
 # Check the summarized data
 # print(monthly_averages)
 
 # Plot the monthly averages
-# ggplot(monthly_averages, aes(x = var1, y = var2, group = 1)) +
+# ggplot(monthly_averages, aes(x = Month, y = Average_Total_Amount, group = 1)) +
 #   geom_line() +
 #   geom_point() +
 #   theme(axis.text.x = element_text(angle = 45, hjust = 1)) +  # Rotate x-axis labels for readability
