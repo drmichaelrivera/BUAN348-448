@@ -121,7 +121,7 @@ ggpairs(sales_data, columns = c("Age", "Quantity", "Total.Amount"),
 # Uncomment the code below and see if you can create a connected scatter plot using
 # Date and Total Amount. Our initial dataframe is called sales_data - not data. 
 
-# ggplot(data, aes(x = var1, y = var2, group = 1)) + geom_line() + geom_point()
+# ggplot(data, aes(x = var1, y = var2)) + geom_line() + geom_point()
 
 # Maybe just charting Date and Total Amount isn't very helpful?
 
